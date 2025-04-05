@@ -16,6 +16,18 @@
 
 </div>
 
+***
+
+# Sikessem's UI kit
+
+[TailwindCSS][tailwindcss-home] and [Laravel Blade][blade-home] widgets for Web Artisans.
+
+[Click to read the full documentation][docs-link].
+
+***
+
+<div align="center"><sub>Made with ❤︎ by <a href="https://twitter.com/intent/follow?screen_name=siguici" style="content:url(https://img.shields.io/twitter/follow/siguici.svg?label=@siguici);margin-bottom:-6px">@siguici</a>.</sub></div>
+
 [sikessem-logo]: https://github.com/sikessem/art/blob/HEAD/images/sikessem.svg
 [sikessem-link]: https://github.com/sikessem "Sikessem"
 
@@ -40,8 +52,8 @@
 [pr-icon]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?color=brightgreen
 [pr-link]: [contrib-link] "PRs welcome!"
 
-[twitter-icon]: https://img.shields.io/twitter/follow/sikessem_news.svg?label=@sikessem_news
-[twitter-link]: https://x.com/intent/follow?screen_name=sikessem_news "Ping Sikessem"
+[twitter-icon]: https://img.shields.io/twitter/follow/SikessemHQ.svg?label=@SikessemHQ
+[twitter-link]: https://x.com/intent/follow?screen_name=SikessemHQ "Ping Sikessem"
 
 [license-icon]: https://img.shields.io/badge/license-MIT-blue.svg
 [license-link]: https://github.com/sikessem/ui/blob/HEAD/LICENSE "Sikessem UI License"
@@ -50,15 +62,3 @@
 
 [tailwindcss-home]: https://tailwindcss.com "TailwindCSS"
 [blade-home]: https://laravel.com/docs/11.x/blade "Laravel Blade"
-
-***
-
-# Sikessem's UI kit
-
-[TailwindCSS][tailwindcss-home] and [Laravel Blade][blade-home] widgets for Web Artisans.
-
-[Click to read the full documentation][docs-link].
-
-***
-
-<div align="center"><sub>Made with ❤︎ by <a href="https://twitter.com/intent/follow?screen_name=siguici" style="content:url(https://img.shields.io/twitter/follow/siguici.svg?label=@siguici);margin-bottom:-6px">@siguici</a>.</sub></div>
