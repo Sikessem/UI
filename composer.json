@@ -55,13 +55,18 @@
     "coverage": "pest --coverage",
     "debug": ["@check", "@analyse", "@review", "@test"],
     "discover": "testbench package:discover --ansi",
-    "fix": ["@refactor", "@lint"],
+    "fix": ["@refactor", "@improve", "@format", "@lint"],
+    "format": "psalter --issues=all",
+    "improve": "phpinsights fix",
+    "init:tools": ["psalm --init", "pest --init"],
+    "inspect": "psalm --no-diff",
     "lint": "pint -v",
     "post-autoload-dump": ["@discover"],
     "test": "pest --colors=always",
     "retest": "pest --retry",
     "review": "rector --dry-run --debug",
-    "refactor": "rector"
+    "refactor": "rector",
+    "verify": "phpinsights analyse"
   },
   "extra": {
     "laravel": {
