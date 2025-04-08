@@ -12,6 +12,7 @@ node_modules/
 Homestead.json
 Homestead.yaml
 *.local
+.phpactor.json
 
 # Environment
 .env
