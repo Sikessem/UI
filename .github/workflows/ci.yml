@@ -49,7 +49,7 @@ jobs:
           composer-options: --no-ansi --no-cache --no-interaction --no-scripts --no-progress --prefer-dist
 
       - name: 🎉 Install JS dependencies
-        uses: siguici/setup-js
+        uses: siguici/setup-js@v1
 
       - name: ✅ Fix code style and build for production
         run: make build
