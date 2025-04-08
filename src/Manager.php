@@ -21,7 +21,7 @@ class Manager implements IsManager
     final public const ANONYMOUS_COMPONENT_NAMESPACE = 'ui::components';
 
     /**
-     * @var array<string,array<string,array<IsComponentConfig>>>;
+     * @var array<string,array<string,array<IsComponentConfig>>>
      */
     protected array $components = [];
 
@@ -319,7 +319,6 @@ class Manager implements IsManager
     {
         $attributes = $this->makeComponentAttributes($component, $attributes);
 
-        /** @var string|ComponentSlot */
         $defaultContents = $this->getComponentContents($component, '');
         $contents ??= $defaultContents;
         if ($contents instanceof ComponentSlot) {

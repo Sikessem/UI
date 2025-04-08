@@ -84,14 +84,12 @@ class ServiceProvider extends BaseServiceProvider
         $app = $this->app;
         /** @var TemplateCompiler */
         $compiler = $app->make('blade.compiler');
-        if (method_exists($compiler, 'precompiler')) {
-            $compiler->precompiler(function ($string) use ($app) {
-                /** @var ComponentCompiler */
-                $precompiler = $app->make(ComponentCompiler::class);
+        $compiler->precompiler(function ($string) use ($app) {
+            /** @var ComponentCompiler */
+            $precompiler = $app->make(ComponentCompiler::class);
 
-                return $precompiler->compile($string);
-            });
-        }
+            return $precompiler->compile($string);
+        });
     }
 
     protected function registerComponents(): void

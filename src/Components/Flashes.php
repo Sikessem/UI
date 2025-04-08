@@ -8,7 +8,7 @@ use Sikessem\UI\Component;
 class Flashes extends Component
 {
     /**
-     * @var Collection<int|string,string>
+     * @var Collection<int|string,non-falsy-string>
      */
     public Collection $messages;
 

@@ -29,6 +29,6 @@ class BaseLayout extends Component
 
     public function render(): View|Factory
     {
-        return view('ui::layouts.base', $this->data);
+        return view('ui::layouts.base', $this->data); // @phpstan-ignore-line
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade as BaseFacade;
 /**
  * @method static string closeTag()
  * @method static void component(string $class, string $alias = null, bool $anonymous = false)
- * @method static \Sikessem\UI\IsComponentConfig componentConfig(string $component, mixed $default = [])
+ * @method static \Sikessem\UI\Contracts\IsComponentConfig componentConfig(string $component, mixed $default = [])
  * @method static string compress(string $contents)
  * @method static mixed config(string $key, mixed $default)
  * @method static array|null find(string $name)
