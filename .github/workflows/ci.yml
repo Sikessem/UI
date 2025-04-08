@@ -14,8 +14,6 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         php: [8.2, 8.3, 8.4]
-        node: [20.16]
-        pnpm: [9.7.0]
         dependency: [prefer-stable]
         experimental: [false]
     name: 👷 CI PHP-${{ matrix.php }} ${{ matrix.dependency }} with Node-${{ matrix.node }} on ${{ matrix.os }}
@@ -24,18 +22,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Cache dependencies
+      - name: 📂 Cache dependencies
         id: composer-cache
         run: |
           echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
       - uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-php-${{ matrix.php }}-composer-${{ matrix.dependency }}-${{ hashFiles('composer.json') }}
+          key: ${{ runner.os }}-dependencies-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
           restore-keys: |
-            ${{ runner.os }}-php-${{ matrix.php }}-composer-${{ matrix.dependency }}-
+            ${{ runner.os }}-dependencies-php-${{ matrix.php }}-composer-
 
-      - name: Setup PHP
+      - name: ⚡️ Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
@@ -44,20 +42,14 @@ jobs:
           tools: composer:v2, php-cs-fixer, phpunit, vimeo/psalm
           coverage: pcov
 
-      - name: Install Composer dependencies
-        run: |
-          composer install -q --no-ansi --no-cache --no-interaction --no-scripts --no-progress --prefer-dist
-          composer update --${{ matrix.dependency }} --no-interaction --prefer-dist --no-progress --no-suggest
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: 📦 Install dependencies
+        uses: ramsey/composer-install@v3
         with:
-          node-version: ${{ matrix.node }}
+          dependency-versions: ${{ matrix.dependencies }}
+          composer-options: --no-ansi --no-cache --no-interaction --no-scripts --no-progress --prefer-dist
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: ${{ matrix.pnpm }}
+      - name: 🎉 Install JS dependencies
+        uses: siguici/setup-js
 
       - name: ✅ Fix code style and build for production
         run: make build
