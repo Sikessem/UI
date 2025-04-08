@@ -24,7 +24,7 @@ check: install
 
 fix: install
 	pnpm fix
-	composer fix
+	[ "$(IS_CI)" != "true" ] && composer fix || true
 
 build: fix
 	pnpm build
