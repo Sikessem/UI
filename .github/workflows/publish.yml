@@ -30,7 +30,7 @@ jobs:
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
-        deno-version: [1.45]
+        deno-version: [2.2]
 
     name: 🎉 Publish to JSR using Deno ${{ matrix.deno-version }}
 

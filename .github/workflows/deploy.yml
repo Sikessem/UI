@@ -32,8 +32,8 @@ jobs:
       fail-fast: true
       matrix:
         operating-system: [ubuntu-latest]
-        node-version: [20.16]
-        pnpm-version: [9.7.0]
+        node-version: [22.14]
+        pnpm-version: [10.8.0]
 
     name: 🚀 Deploy https://sikessem.github.io/ui to Node-${{ matrix.node-version }} and build with pnpm@${{ matrix.pnpm-version }} on ${{ matrix.operating-system }}
 
