@@ -22,6 +22,8 @@ check: install
 	pnpm check
 	composer check
 
+IS_CI ?= $(CI)
+
 fix: install
 	pnpm fix
 	[ "$(IS_CI)" != "true" ] && composer fix || true
