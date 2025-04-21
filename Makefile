@@ -4,10 +4,10 @@ install: install-js install-php
 
 install-js: node_modules pnpm-lock.yaml
 
-node_modules: package.json packages/ui/package.json website/package.json
+node_modules: package.json packages/ui/package.json
 	pnpm i -r
 
-pnpm-lock.yaml: package.json packages/ui/package.json website/package.json
+pnpm-lock.yaml: package.json packages/ui/package.json
 	pnpm up -r
 
 install-php: vendor composer.lock
