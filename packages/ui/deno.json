@@ -2,7 +2,7 @@
   "name": "@sikessem/ui",
   "version": "0.0.0",
   "imports": {
-    "npm:plugwind.js": "jsr:@siguici/plugwind"
+    "npm:colorwind": "jsr:@siguici/colorwind"
   },
   "exports": {
     ".": "./jsr/index.ts"

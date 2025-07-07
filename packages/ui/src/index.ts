@@ -1,34 +1,7 @@
-import type { PluginCreator, PluginCreatorWithOptions } from "plugwind.js";
-import * as Plugger from "./plugger";
-import type { ClassName } from "./styles";
+import colorwind from "colorwind";
 
-export interface RequiredLinkOptions {
-  linkClass: ClassName;
-}
-export type LinkOptions = Partial<RequiredLinkOptions>;
+export * from "colorwind";
 
-export type RequiredEdgeOptions = {
-  entryClass: ClassName;
-  buttonClass: ClassName;
-};
-export type EdgeOptions = Partial<RequiredEdgeOptions>;
+export { colorwind as UI };
 
-export type RequiredUIOptions = RequiredLinkOptions & RequiredEdgeOptions;
-
-export type UIOptions = Partial<RequiredUIOptions> | undefined;
-
-export type DarkModeStrategy = "class" | "media";
-export type DarkModeQuery = string;
-export type DarkMode = [DarkModeStrategy, DarkModeQuery];
-
-export * from "./styles";
-export * from "./colors";
-
-export const UI: PluginCreatorWithOptions<UIOptions> = Plugger.plugUI();
-export const UIColors: PluginCreator = Plugger.plugColors();
-export const UILinks: PluginCreatorWithOptions<LinkOptions> =
-  Plugger.plugLinks();
-export const UIEdges: PluginCreatorWithOptions<EdgeOptions> =
-  Plugger.plugEdges();
-
-export default UI;
+export default colorwind;

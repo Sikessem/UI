@@ -50,16 +50,18 @@
     "@biomejs/biome": "^1.9.4",
     "@sikessem/ui": "workspace:*",
     "@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
-    "@tailwindcss/postcss": "^4.1.4",
-    "@tailwindcss/vite": "^4.1.4",
-    "@types/node": "^22.14.1",
-    "@vitest/coverage-istanbul": "^3.1.2",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@tailwindcss/vite": "^4.1.11",
+    "@types/node": "^22.16.0",
+    "@vitest/coverage-istanbul": "^3.2.4",
     "autoprefixer": "^10.4.21",
-    "concurrently": "^9.1.2",
-    "tailwindcss": "^4.1.4",
+    "concurrently": "^9.2.0",
+    "plugwind.js": "^0.4.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
     "ts-node": "^10.9.2",
     "tslib": "^2.8.1",
     "typescript": "^5.8.3",
-    "vitest": "^3.1.2"
+    "vitest": "^3.2.4"
   }
 }
