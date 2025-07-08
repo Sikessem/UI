@@ -2,13 +2,13 @@
   "name": "@sikessem/ui",
   "version": "0.0.0",
   "license": "MIT",
-  "packageManager": "pnpm@9.7.0",
+  "packageManager": "pnpm@10.12.4",
   "publishConfig": {
     "access": "public"
   },
   "engines": {
-    "node": ">=20.16",
-    "pnpm": ">=9.7",
+    "node": ">=22.17",
+    "pnpm": ">=10.12",
     "npm": "prefer using pnpm",
     "yarn": "prefer using pnpm"
   },

@@ -26,8 +26,8 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-latest]
-        node: [22.14]
-        pnpm: [10.8.0]
+        node: [22.17]
+        pnpm: [10.12]
     name: 📦️ Build Node-${{ matrix.node }} on ${{ matrix.os }}
 
     steps:
