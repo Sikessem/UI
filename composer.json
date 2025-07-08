@@ -33,7 +33,7 @@
   },
   "require-dev": {
     "sikessem/laravel-devtools": "^1.4",
-    "sikessem/framework": "^0.8.0"
+    "sikessem/framework": "^0.9.0"
   },
   "autoload": {
     "psr-4": {
