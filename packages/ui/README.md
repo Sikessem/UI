@@ -53,7 +53,7 @@ Add [`@sikessem/ui`](https://sikessem.github.io/ui) to your [TailwindCSS configu
 
   /** @type {import('tailwindcss').Config} */
   export default {
-    plugins: [ui],
+  	plugins: [ui],
   };
   ```
 
@@ -64,7 +64,7 @@ Add [`@sikessem/ui`](https://sikessem.github.io/ui) to your [TailwindCSS configu
 
   /** @type {import('tailwindcss').Config} */
   export default {
-    plugins: [ui],
+  	plugins: [ui],
   };
   ```
 
