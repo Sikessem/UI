@@ -27,7 +27,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         node: [22.17]
-        pnpm: [10.12]
+        pnpm: [10.12.4]
     name: 📦️ Build Node-${{ matrix.node }} on ${{ matrix.os }}
 
     steps:
