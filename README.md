@@ -28,7 +28,7 @@
 [actions-link]: https://github.com/sikessem/ui/actions "Sikessem UI status"
 
 [pr-icon]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?color=brightgreen
-[pr-link]: https://sikessem.github.io/ui/contributions "Prs Welcome"
+[pr-link]: https://sikessem.github.io/contributions "Prs Welcome"
 
 [twitter-icon]: https://img.shields.io/twitter/follow/SikessemHQ.svg?label=@SikessemHQ
 [twitter-link]: https://x.com/intent/follow?screen_name=SikessemHQ "Ping Sikessem"
