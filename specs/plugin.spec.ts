@@ -3,7 +3,6 @@ import tailwindcss from "@tailwindcss/postcss";
 import postcss from "postcss";
 import { describe, expect, it } from "vitest";
 
-const html = String.raw;
 const css = String.raw;
 
 function run(
@@ -17,14 +16,6 @@ function run(
 }
 
 describe.concurrent("suite", () => {
-  const config = {
-    content: [
-      {
-        raw: html`<div class="text-red bg-red-0 border-red-4"><a href="#" class="button-blue">Click button</a><a href="#" class="link-green">Click link</a></div>`,
-      },
-    ],
-  };
-
   it("should have red text class", async () => {
     return run().then((result) => {
       expect(result.css).toContain(css`.text-red`);
