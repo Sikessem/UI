@@ -1,8 +1,8 @@
-<div align="center">
+# [<img src="https://github.com/sikessem/art/blob/HEAD/images/logo.svg" alt="Sikessem" height="24" />][sikessem-link]'s UI kit
 
-[![sikessem-logo]][sikessem-link]
+[TailwindCSS][tailwindcss-home] and [Laravel Blade][blade-home] widgets for Web Artisans.
 
-<br/>
+[Click to read the full documentation][docs-link].
 
 [![php-icon]][php-link]
 [![typescript-icon]][typescript-link]
@@ -13,16 +13,6 @@
 [![actions-icon]][actions-link]
 [![pr-icon]][pr-link]
 [![twitter-icon]][twitter-link]
-
-</div>
-
-***
-
-# Sikessem's UI kit
-
-[TailwindCSS][tailwindcss-home] and [Laravel Blade][blade-home] widgets for Web Artisans.
-
-[Click to read the full documentation][docs-link].
 
 ***
 
@@ -61,4 +51,4 @@
 [docs-link]: https://sikessem.github.io/ui "Sikessem UI Documentation"
 
 [tailwindcss-home]: https://tailwindcss.com "TailwindCSS"
-[blade-home]: https://laravel.com/docs/11.x/blade "Laravel Blade"
+[blade-home]: https://laravel.com/docs/blade "Laravel Blade"
