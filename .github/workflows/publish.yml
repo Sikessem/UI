@@ -51,6 +51,9 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: 📦️ Install dependencies
+        run: deno install
+
       - name: 🚨 Fix code style
         run: deno task fix
 
