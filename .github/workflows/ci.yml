@@ -1,10 +1,7 @@
 name: CI
-
 permissions:
   contents: read
-
-on: ['push', 'pull_request']
-
+on: ["push", "pull_request"]
 jobs:
   ci:
     runs-on: ${{ matrix.os }}
@@ -17,11 +14,9 @@ jobs:
         dependency: [prefer-stable]
         experimental: [false]
     name: 👷 CI PHP-${{ matrix.php }} ${{ matrix.dependency }} with Node-${{ matrix.node }} on ${{ matrix.os }}
-
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-
       - name: 📂 Cache dependencies
         id: composer-cache
         run: |
@@ -32,7 +27,6 @@ jobs:
           key: ${{ runner.os }}-dependencies-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
           restore-keys: |
             ${{ runner.os }}-dependencies-php-${{ matrix.php }}-composer-
-
       - name: ⚡️ Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -41,25 +35,19 @@ jobs:
           ini-values: error_reporting=E_ALL
           tools: composer:v2, php-cs-fixer, phpunit, vimeo/psalm
           coverage: pcov
-
       - name: 📦 Install dependencies
         uses: ramsey/composer-install@v3
         with:
           dependency-versions: ${{ matrix.dependencies }}
           composer-options: --no-ansi --no-cache --no-interaction --no-scripts --no-progress --prefer-dist
-
       - name: 🎉 Install JS dependencies
         uses: siguici/setup-js@v1
-
       - name: ✅ Fix code style and build for production
         run: make build
-
       - name: 🧹 Check code lint
         run: make check
-
       - name: ⚗️ Run static analysis
         run: |
           composer analyse
-
       - name: 🧪 Test features
         run: make test

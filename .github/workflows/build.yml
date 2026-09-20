@@ -1,22 +1,17 @@
 name: Build
-
 on:
   push:
     branches:
       - main
-
   workflow_run:
     workflows: [CI]
     types: [completed]
     branches: [main]
-
 defaults:
   run:
     working-directory: ./packages/ui
-
 permissions:
   contents: read
-
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -26,30 +21,19 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-latest]
-        node: [22.17]
-        pnpm: [10.28.2]
     name: 📦️ Build Node-${{ matrix.node }} on ${{ matrix.os }}
-
     steps:
       - name: 🚚 Checkout
         uses: actions/checkout@v6
-
-      - name: ✨ Setup Node.js
-        uses: actions/setup-node@v6
+      - name: 🔧 Install JS dependencies
+        uses: siguici/setup-js@v1
         with:
-          node-version: ${{ matrix.node }}
-
-      - name: 🔧 Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: ${{ matrix.pnpm }}
-
+          runtime: bun
+          version: ${{ matrix.bun-version }}
       - name: 🔨 Install JavaScript dependencies
-        run: pnpm install
-
+        run: bun install
       - name: ✅ Fix code style and build for production
-        run: pnpm build
-
+        run: bun run build
       - name: 📂 Upload Deno distribution files
         uses: actions/upload-artifact@v6
         with:
