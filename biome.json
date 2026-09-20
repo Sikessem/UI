@@ -1,24 +1,35 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "extends": ["./packages/ui/biome.json"],
-  "assist": { "actions": { "source": { "organizeImports": "on" } } },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
   "files": {
-    "includes": ["**", "!**/node_modules", "!**/vendor", "!**/dist"]
+    "includes": ["!**/node_modules", "!**/vendor", "!**/dist"]
   },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
+      "preset": "recommended",
       "style": {
         "useBlockStatements": "error",
         "noShoutyConstants": "warn",
         "useConsistentArrayType": {
           "level": "error",
-          "options": { "syntax": "shorthand" }
+          "options": {
+            "syntax": "shorthand"
+          }
         }
       },
       "complexity": {
         "noForEach": "off"
+      },
+      "a11y": {
+        "noSvgWithoutTitle": "warn"
       }
     }
   },
