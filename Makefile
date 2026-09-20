@@ -2,13 +2,13 @@
 
 install: install-js install-php
 
-install-js: node_modules pnpm-lock.yaml
+install-js: node_modules bun.lock
 
 node_modules: package.json packages/ui/package.json
-	pnpm i -r
+	bun i
 
-pnpm-lock.yaml: package.json packages/ui/package.json
-	pnpm up -r
+bun.lock: package.json packages/ui/package.json
+	bun update
 
 install-php: vendor composer.lock
 
@@ -25,16 +25,16 @@ check: install
 IS_CI ?= $(CI)
 
 fix: install
-	pnpm fix
+	bun fix
 	[ "$(IS_CI)" != "true" ] && composer fix || true
 
 build: fix
-	pnpm build
+	bun run build
 
 test: install
-	pnpm test
+	bun run test
 	composer test
 
 debug: install
-	pnpm debug
+	bun debug
 	composer debug
