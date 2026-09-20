@@ -1,6 +1,7 @@
 <?php
 
 use Pest\Expectation;
+use Sikessem\UI\Tests\TestCase;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,7 @@ use Pest\Expectation;
 |
 */
 
-uses(Sikessem\UI\Tests\TestCase::class)->in('Feat', 'Unit');
+uses(TestCase::class)->in('Feat', 'Unit');
 
 /*
 |--------------------------------------------------------------------------
