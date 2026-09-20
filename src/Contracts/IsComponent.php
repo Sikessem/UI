@@ -2,19 +2,23 @@
 
 namespace Sikessem\UI\Contracts;
 
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Contracts\View\View;
+
 interface IsComponent
 {
     /**
      * Get the view / view contents that represent the component.
      *
-     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\Support\Htmlable|\Closure|string
+     * @return View|Htmlable|\Closure|string
      */
     public function render();
 
     /**
      * Resolve the Blade view or view file that should be used when rendering the component.
      *
-     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\Support\Htmlable|\Closure|string
+     * @return View|Htmlable|\Closure|string
      */
     public function resolveView();
 
@@ -51,9 +55,9 @@ interface IsComponent
      * Get the evaluated view contents for the given view.
      *
      * @param  string|null  $view
-     * @param  \Illuminate\Contracts\Support\Arrayable<array-key,mixed>|array<mixed>  $data
+     * @param  Arrayable<array-key,mixed>|array<mixed>  $data
      * @param  array<mixed>  $mergeData
-     * @return \Illuminate\Contracts\View\View
+     * @return View
      */
     public function view($view, $data = [], $mergeData = []);
 }

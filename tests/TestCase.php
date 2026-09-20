@@ -3,6 +3,8 @@
 namespace Sikessem\UI\Tests;
 
 use Illuminate\Contracts\Config\Repository;
+use Illuminate\Foundation\Application;
+use Illuminate\Routing\Router;
 use Livewire\Livewire;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
@@ -29,7 +31,7 @@ abstract class TestCase extends BaseTestCase
     /**
      * Get package providers.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param  Application  $app
      * @return array<int,class-string<\Illuminate\Support\ServiceProvider>>
      */
     protected function getPackageProviders($app): array
@@ -44,7 +46,7 @@ abstract class TestCase extends BaseTestCase
     /**
      * Override application aliases.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param  Application  $app
      * @return array<string, class-string<\Illuminate\Support\Facades\Facade>>
      */
     protected function getPackageAliases($app): array
@@ -58,7 +60,7 @@ abstract class TestCase extends BaseTestCase
     /**
      * Define environment setup.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param  Application  $app
      * @return void
      */
     protected function defineEnvironment($app)
@@ -77,7 +79,7 @@ abstract class TestCase extends BaseTestCase
     /**
      * Define routes setup.
      *
-     * @param  \Illuminate\Routing\Router  $router
+     * @param  Router  $router
      * @return void
      */
     protected function defineRoutes($router)
